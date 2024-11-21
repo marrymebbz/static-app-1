@@ -7,6 +7,7 @@
     --neongreen: #D2FBA4;
     --white: #fff
     --black: #000;
+    --lightgray: #e8ebf1;
 }
 body,
 html
@@ -33,6 +34,10 @@ html
 {
     background-color:#D2FBA4;
 }
+.bg-lightgray
+{
+    background-color:#e8ebf1;
+}
 
 
 .text-limegreen
@@ -55,19 +60,19 @@ html
 
 .border-limegreen
 {
-    border-color:#88CA5E;
+    border: 1px solid #88CA5E;
 }   
 .border-green
 {
-    border-color:#1D741B;
+    border: 1px solid #00c96e;
 }
 .border-rosequartz
 {
-    border-color:#F1C0B9;
+    border: 1px solid #F1C0B9;
 }
 .border-neongreen
 {
-    border-color:#D2FBA4;
+    border: 1px solid #D2FBA4;
 }
 
 
