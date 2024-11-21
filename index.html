@@ -7,8 +7,7 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 	<link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-	<!-- Google Fonts -->
-
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	<!-- External CSS -->
 	<link rel="stylesheet" href="./index.css">
 	<title>Mary Grace Isonza - Full Stack Web Developer</title>
@@ -56,8 +55,8 @@
 	<!-- Navbar Section End -->
 
 	<body>
-		<!-- Landing Section Start -->
-		<section id="landing" class="container pt-2">
+		<!-- Hero Section Start -->
+		<section id="hero" class="container pt-2">
 			<h1 class="text-center fs-2 py-2 bg-limegreen text-white">Website Content for Book Blossom</h1>
 			<div id="bookBlossomCarousel" class="carousel slide" data-bs-ride="carousel">
 				<!-- Indicators at the bottom -->
@@ -89,13 +88,57 @@
 				</button>
 			</div>
 		</section>
-		<!-- Landing Section End -->
+		<!-- Hero Section End -->
 
 		<!-- About BookBlossom Start -->
 		<section class="container mt-5">
 			<h2 class="text-center fs-4 text-green text-uppercase py-0 my-0">--- About BookBlossom ---</h2>
 			<h3 class="text-center fs-4 text-limegreen py-0 my-0">Our Story</h3>
 			<p class="text-center text-black">At Book Blossom, we’re passionate about cultivating a love for reading. We aim to connect readers with books that enlighten, entertain, and enrich lives—one page at a time.</p>
+			<div class="row row-cols-1 row-cols-md-3 g-4">
+				<div class="col">
+					<div class="card h-100 pt-3 border-green">
+						<div class="text-center">
+							<i class="bi bi-geo-alt-fill fs-2"></i>
+						</div>
+						<div class="card-body">
+							<h5 class="card-title text-center text-green">When We Started?</h5>
+							<p class="card-text text-center">At BookBlossom, we began our journey in 2024 with a mission to make books more accessible to everyone. We wanted to create a platform where book lovers could discover new reads, share recommendations, and enjoy discounts on their favorite books.</p>
+						</div>
+						<div class="card-footer text-center bg-limegreen text-white fw-bold">
+							<small>Explore, discover, and buy books today!</small>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card h-100 pt-3 border-green">
+						<div class="text-center">
+							<i class="bi bi-calendar-fill fs-2"></i>
+						</div>
+						<div class="card-body">
+							<h5 class="card-title text-center text-green">Where We're Based?</h5>
+							<p class="card-text text-center">BookBlossom is proudly based in Manila, Philippines, serving book enthusiasts worldwide through our online platform. With a strong presence in the e-commerce space, we offer global shipping to ensure that every reader can enjoy our curated collection of books, no matter where they are.</p>
+						</div>
+						<div class="card-footer text-center bg-limegreen text-white fw-bold">
+							<small>Find your next great read!</small>
+						</div>
+				  	</div>
+				</div>
+				<div class="col">
+					<div class="card h-100 pt-3 border-green">
+						<div class="text-center">
+							<i class="bi bi-basket3-fill fs-2"></i>
+						</div>
+						<div class="card-body">
+							<h5 class="card-title text-center text-green">What We Offer?</h5>
+							<p class="card-text text-center">We offer an extensive collection of books ranging from bestsellers to hidden gems, across all genres. Whether you're looking for fiction, non-fiction, educational materials, or children's books, we’ve got something for every reader. Additionally, we provide book promotions, author interviews, and reading recommendations to help you discover your next great read.</p>
+						</div>
+						<div class="card-footer text-center bg-limegreen text-white fw-bold">
+							<small>Browse books, ignite your imagination!</small>
+						</div>
+				  	</div>
+				</div>
+			</div>
 		</section>
 		<!-- About BookBlossom Start -->
 
@@ -185,15 +228,51 @@
 		<!-- Featured Products End -->
 
 		<!-- Sales Promo Start -->
-		<section class="container mt-5">
-			<h2 class="text-center fs-4 text-green text-uppercase py-0 my-0">--- Bloom with Our Deals ---</h2>
-			<h3 class="text-center fs-4 text-limegreen py-0 my-0">Our Sales Promo</h3>
-			<p class="text-center text-black">Enjoy up to 50% off on select titles during our seasonal sale! Grab your favorite books at discounted prices and let your reading journey flourish.</p>
+		<section class="container-fluid mt-5 bg-danger bg-gradient py-5">
+			<h2 class="text-center fs-4 text-white text-uppercase py-0 my-0">--- Bloom with Our Deals ---</h2>
+			<h3 class="text-center fs-4 text-white py-0 my-0">Our Sales Promo</h3>
+			<p class="text-center text-white">Enjoy up to 50% off on select titles during our seasonal sale! Grab your favorite books at discounted prices and let your reading journey flourish.</p>
+			<div id="countdown" class="countdown-container text-center">
+				<div class="countdown-item fs-2 fw-semibold text-uppercase mb-1">
+				  <span id="days" class="bg-warning py-1 px-4 fw-bold"></span>
+				</div>
+				<div class="countdown-item fs-4 fw-semibold text-uppercase">
+				  <span id="time" class="text-white"></span>
+				</div>
+			</div>
 		</section>
 		<!-- Sales Promo Start -->
 
 		<!-- Bootstrap Script -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+		<script>
+			function updateCountdown() {
+			  const christmasDate = new Date('December 25, 2024 00:00:00');
+			  const now = new Date();
+			  const diff = christmasDate - now;
+		  
+			  // If Christmas has passed, set the time to 0
+			  if (diff <= 0) {
+				document.getElementById("days").innerText = "0 Days";
+				document.getElementById("time").innerText = "0 Hours : 0 Minutes : 0 Seconds";
+				return;
+			  }
+		  
+			  const seconds = Math.floor((diff / 1000) % 60);
+			  const minutes = Math.floor((diff / 1000 / 60) % 60);
+			  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+			  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+		  
+			  document.getElementById("days").innerText = `${days} Days`;
+			  document.getElementById("time").innerText = `${hours} Hours : ${minutes} Minutes : ${seconds} Seconds`;
+			}
+		  
+			// Update the countdown every second
+			setInterval(updateCountdown, 1000);
+		  
+			// Initial update
+			updateCountdown();
+		</script>
 		<footer id="footer" class="py-3 fw-bold bg-green text-white text-center container-fluid">
 			<div>© 2024 BookBlossom: All rights reserved.</div>
 		</footer>
