@@ -1,0 +1,76 @@
+/* Global Styles */
+:root
+{
+    --limegreen: #88CA5E;
+    --green: #1D741B;
+    --rosequartz: #F1C0B9;
+    --neongreen: #D2FBA4;
+    --white: #fff
+    --black: #000;
+}
+body,
+html
+{
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background-color: #f3f4f6;
+}
+.bg-limegreen
+{
+    background-color:#88CA5E;
+}   
+.bg-green
+{
+    background-color:#1D741B;
+}
+.bg-rosequartz
+{
+    background-color:#F1C0B9;
+}
+.bg-neongreen
+{
+    background-color:#D2FBA4;
+}
+
+
+.text-limegreen
+{
+    color:#88CA5E;
+}   
+.text-green
+{
+    color:#1D741B;
+}
+.text-rosequartz
+{
+    color:#F1C0B9;
+}
+.text-neongreen
+{
+    color:#D2FBA4;
+}
+
+
+.border-limegreen
+{
+    border-color:#88CA5E;
+}   
+.border-green
+{
+    border-color:#1D741B;
+}
+.border-rosequartz
+{
+    border-color:#F1C0B9;
+}
+.border-neongreen
+{
+    border-color:#D2FBA4;
+}
+
+
+/* Header */
+
+/* Body */
